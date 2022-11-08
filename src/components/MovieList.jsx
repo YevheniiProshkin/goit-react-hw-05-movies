@@ -1,0 +1,51 @@
+import { Outlet } from 'react-router-dom';
+import React, { Suspense } from 'react';
+import PropTypes from 'prop-types';
+import { useLocation } from 'react-router-dom';
+import { Link, MoviesCard, TrendMovieList } from '../styles/MovieList.styled';
+
+const MainFilmList = ({ movieList }) => {
+  const location = useLocation();
+
+  return (
+    <div>
+      <TrendMovieList>
+        {movieList.map(({ id, poster_path, title }) => (
+          <MoviesCard key={id}>
+            <Link
+              to={{
+                pathname: `/goit-react-hw-05-movies/movies/${`${id}`}`,
+                state: {
+                  from: {
+                    location,
+                    label: 'Back to Home',
+                  },
+                },
+              }}
+            >
+              <img
+                src={
+                  poster_path &&
+                  `https://image.tmdb.org/t/p/w500/${poster_path}`
+                }
+                alt={title}
+                height=""
+                width=""
+              />
+              <p>{title}</p>
+            </Link>
+          </MoviesCard>
+        ))}
+      </TrendMovieList>
+      <Suspense fallback={<h1>Loading...</h1>}>
+        <Outlet />
+      </Suspense>
+    </div>
+  );
+};
+
+MainFilmList.propTypes = {
+  movieList: PropTypes.array.isRequired,
+};
+
+export default MainFilmList;
