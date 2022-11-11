@@ -17,7 +17,7 @@ export default function Home() {
 
   return (
     <>
-      <h1>Tranding today</h1>
+      <h1 className="article">Tranding today</h1>
       <MainFilmList movieList={movies} />
     </>
   );

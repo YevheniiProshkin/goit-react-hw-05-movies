@@ -29,7 +29,7 @@ const MainFilmList = ({ movieList }) => {
                   `https://image.tmdb.org/t/p/w500/${poster_path}`
                 }
                 alt={title}
-                height=""
+                height="300"
                 width=""
               />
               <p>{title}</p>

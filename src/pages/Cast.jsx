@@ -32,7 +32,7 @@ export default function MovieCast() {
                     `https://image.tmdb.org/t/p/w500/${profile_path}`
                   }
                   alt={name}
-                  width=""
+                  width="120"
                   height=""
                 />
                 <p>{name}</p>

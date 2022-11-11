@@ -34,7 +34,7 @@ export default function Movies() {
 
   return (
     <>
-      <h2>Search Movies</h2>
+      <h2 className="article">Search Movies</h2>
       <form onSubmit={handleSubmit}>
         <Input
           type="text"

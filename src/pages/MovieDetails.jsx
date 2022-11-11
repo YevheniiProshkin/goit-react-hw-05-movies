@@ -7,6 +7,7 @@ import {
   AdditonalInfoList,
   Link,
 } from '../styles/MovieList.styled';
+import '../styles/styled.css';
 
 export default function MovieDetails() {
   const [movieDetails, setMovieDetails] = useState(null);
@@ -29,13 +30,15 @@ export default function MovieDetails() {
   return (
     <main>
       <div>
-        <NavLink to={backLink}>Go Back</NavLink>
+        <NavLink className="backLink" to={backLink}>
+          Go Back
+        </NavLink>
         <MovieDescription
           movieDetails={movieDetails}
           location={location}
           movieId={movieId}
         />
-        <h2>Additonal Information</h2>
+        <h2 className="article">Additonal Information</h2>
         <AdditonalInfoList>
           <AdditonalInfoItem>
             <Link to="cast" state={{ ...location.state, movieId: movieId }}>
