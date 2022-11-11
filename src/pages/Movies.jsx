@@ -3,6 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 import MainFilmList from 'components/MovieList';
 import { getMoviesQuery } from '../services/API';
 import { ButtonSearch, Input } from 'styles/Movie.styled';
+import '../styles/styled.css';
 import Notiflix from 'notiflix';
 
 export default function Movies() {

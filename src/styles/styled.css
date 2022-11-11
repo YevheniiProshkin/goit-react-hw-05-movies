@@ -11,3 +11,11 @@
   color: white;
   background-color: red;
 }
+
+.reviews {
+  font-size: 30px;
+  font-weight: 600;
+  padding-left: 20px;
+  text-align: center;
+  color: red;
+}

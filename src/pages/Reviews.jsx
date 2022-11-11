@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { getMovieReviews } from '../services/API';
 import { Info } from 'styles/MovieInfo.styled';
+import '../styles/styled.css';
 
 export default function Reviews() {
   const [reviewInfo, setReviewInfo] = useState([]);
@@ -18,7 +19,6 @@ export default function Reviews() {
   return (
     <section>
       <div>
-        <hr></hr>
         {reviewInfo.length !== 0 ? (
           <ul>
             {reviewInfo.map(({ id, author, content }) => (
@@ -32,7 +32,7 @@ export default function Reviews() {
             ))}
           </ul>
         ) : (
-          <p>Not yet reviews</p>
+          <p className="reviews">Not yet reviews</p>
         )}
       </div>
     </section>
