@@ -29,8 +29,9 @@ const MainFilmList = ({ movieList }) => {
             >
               <img
                 src={
-                  poster_path &&
-                  `https://image.tmdb.org/t/p/w500/${poster_path}`
+                  poster_path
+                    ? `https://image.tmdb.org/t/p/w500/${poster_path}`
+                    : 'https://via.placeholder.com/200x300'
                 }
                 alt={title}
                 height="300"

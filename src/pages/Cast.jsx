@@ -28,8 +28,9 @@ export default function MovieCast() {
               <CastItem key={id}>
                 <img
                   src={
-                    profile_path &&
-                    `https://image.tmdb.org/t/p/w500/${profile_path}`
+                    profile_path
+                      ? `https://image.tmdb.org/t/p/w500/${profile_path}`
+                      : 'https://via.placeholder.com/200x300'
                   }
                   alt={name}
                   width="120"
