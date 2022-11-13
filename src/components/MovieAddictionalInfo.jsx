@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
 import { NavLink, Outlet } from 'react-router-dom';
+import '../styles/styled.css';
 
 const MovieAddictionalInfo = ({ location, movieId }) => {
   return (
     <>
-      <h2>Additonal Information</h2>
+      <h2 className="article">Additonal Information</h2>
       <ul>
         <li>
           <NavLink to="cast" state={{ ...location.state, movieId: movieId }}>

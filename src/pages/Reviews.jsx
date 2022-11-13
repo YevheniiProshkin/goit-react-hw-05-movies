@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { getMovieReviews } from '../services/API';
 import { Info } from 'styles/MovieInfo.styled';
 import '../styles/styled.css';
 
 export default function Reviews() {
   const [reviewInfo, setReviewInfo] = useState([]);
-  const location = useLocation();
-  const movieId = location.state.movieId;
+  // const location = useLocation();
+  // const movieId = location.state.movieId;
+  const { id: movieId } = useParams();
 
   useEffect(() => {
     async function getReviewInfo() {

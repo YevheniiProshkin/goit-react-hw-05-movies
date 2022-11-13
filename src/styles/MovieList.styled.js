@@ -52,4 +52,7 @@ export const AdditonalInfoItem = styled.li`
 export const Link = styled(NavLink)`
   text-decoration: none;
   color: black;
+  &.active {
+    color: white;
+    
 `;

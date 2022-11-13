@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { NavLink, useLocation, useParams, Outlet } from 'react-router-dom';
+import { useLocation, useParams, Outlet } from 'react-router-dom';
 import { getMovieById } from '../services/API';
 import MovieDescription from '../components/MovieInfo';
 import {
@@ -13,7 +13,8 @@ export default function MovieDetails() {
   const [movieDetails, setMovieDetails] = useState(null);
   const location = useLocation();
   const { movieId } = useParams();
-  const backLink = location.state?.from ?? '/goit-react-hw-05-movies';
+  // const backLink = location.state?.from ?? '/goit-react-hw-05-movies';
+  const backLink = location.state?.from ?? '/';
 
   useEffect(() => {
     async function getFilmDetails() {
@@ -30,9 +31,9 @@ export default function MovieDetails() {
   return (
     <main>
       <div>
-        <NavLink className="backLink" to={backLink}>
+        <Link className="backLink" to={backLink}>
           Go Back
-        </NavLink>
+        </Link>
         <MovieDescription
           movieDetails={movieDetails}
           location={location}
@@ -41,12 +42,12 @@ export default function MovieDetails() {
         <h2 className="article">Additonal Information</h2>
         <AdditonalInfoList>
           <AdditonalInfoItem>
-            <Link to="cast" state={{ ...location.state, movieId: movieId }}>
+            <Link to="cast" state={{ from: backLink }}>
               Cast
             </Link>
           </AdditonalInfoItem>
           <AdditonalInfoItem>
-            <Link to="reviews" state={{ ...location.state, movieId: movieId }}>
+            <Link to="reviews" state={{ from: backLink }}>
               Reviews
             </Link>
           </AdditonalInfoItem>

@@ -14,12 +14,16 @@ const MainFilmList = ({ movieList }) => {
           <MoviesCard key={id}>
             <Link
               to={{
-                pathname: `/goit-react-hw-05-movies/movies/${`${id}`}`,
+                // pathname: `/goit-react-hw-05-movies/movies/${`${id}`}`,
+                pathname: `/movies/${id}`,
+                // state: {
+                //   from: {
+                //     location,
+                //     label: 'Back to Home',
+                //   },
+                // },
                 state: {
-                  from: {
-                    location,
-                    label: 'Back to Home',
-                  },
+                  from: location,
                 },
               }}
             >

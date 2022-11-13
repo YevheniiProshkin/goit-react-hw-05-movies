@@ -2,15 +2,15 @@ import { Outlet } from 'react-router-dom';
 import React, { Suspense } from 'react';
 import { Container, Header, Link } from '../styles/GeneralLayout.styled';
 
-export default function SharedLayout() {
+export default function GeneralLayout() {
   return (
     <Container>
       <Header>
         <nav>
-          <Link to="" end>
+          <Link to="/" end>
             Home
           </Link>
-          <Link to="movies">Movies</Link>
+          <Link to="/movies">Movies</Link>
         </nav>
       </Header>
       <Suspense fallback={<h1>Loading...</h1>}>

@@ -11,7 +11,8 @@ const GeneralLayout = lazy(() => import('../components/GeneralLayout'));
 export const App = () => {
   return (
     <Routes>
-      <Route path="/goit-react-hw-05-movies" element={<GeneralLayout />}>
+      {/* <Route path="/goit-react-hw-05-movies" element={<GeneralLayout />}> */}
+      <Route path="/" element={<GeneralLayout />}>
         <Route index element={<Home />} />
         <Route path="movies" element={<Movies />} />
         <Route path="movies/:movieId" element={<MovieDetails />}>
