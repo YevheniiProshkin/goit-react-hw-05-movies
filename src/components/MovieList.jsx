@@ -12,21 +12,7 @@ const MainFilmList = ({ movieList }) => {
       <TrendMovieList>
         {movieList.map(({ id, poster_path, title }) => (
           <MoviesCard key={id}>
-            <Link
-              to={{
-                // pathname: `/goit-react-hw-05-movies/movies/${`${id}`}`,
-                pathname: `/movies/${id}`,
-                // state: {
-                //   from: {
-                //     location,
-                //     label: 'Back to Home',
-                //   },
-                // },
-                state: {
-                  from: location,
-                },
-              }}
-            >
+            <Link to={`/movies/${id}`} state={{ from: location }}>
               <img
                 src={
                   poster_path
